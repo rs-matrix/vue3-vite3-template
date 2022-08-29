@@ -23,11 +23,21 @@
 - [Vue3](https://v3.vuejs.org/) - 熟悉 Vue 基础语法
 - [TypeScript](https://www.typescriptlang.org/) - 熟悉`TypeScript`基本语法
 - [Es6+](http://es6.ruanyifeng.com/) - 熟悉 es6 基本语法
-- [Vue-Router-Next](https://next.router.vuejs.org/) - 熟悉 vue-router 基本使用
+- [Vue-Router](https://next.router.vuejs.org/) - 熟悉 vue-router 基本使用
+- [Pinia](https://pinia.vuejs.org/) - 熟悉新一代状态管理工具 pinia 基本使用
 - [Ant-Design-Vue](https://2x.antdv.com/docs/vue/introduce-cn/) - ui 基本使用
+- [TailwindCSS](https://www.tailwindcss.cn/) - 熟悉原子化 css 基本使用
+- [pnpm](https://pnpm.io/zh/) - 熟悉节省磁盘空间的包管理工具 pnpm 基本使用
 - [Mock.js](https://github.com/nuysoft/Mock) - mockjs 基本语法
+- [Day.js](https://dayjs.gitee.io/zh-CN/) - 轻量日期工具 dayjs 基本使用
+- [lodash](https://lodash.com/) - 提供模块化、性能和附加功能的现代 JavaScript 实用库。
+- [ramda](https://ramdajs.com/) - 函数式编程风格的实用函数库。
 
 ## 安装使用
+
+- node 版本
+
+推荐使用 node16 版本来安装 pnpm，然后通过 pnpm 工具管理依赖以及打包。
 
 - 安装依赖
 
