@@ -1,11 +1,6 @@
 {
-  "name": "vben-admin",
-  "version": "2.8.0",
-  "author": {
-    "name": "vben",
-    "email": "anncwb@126.com",
-    "url": "https://github.com/anncwb"
-  },
+  "name": "zqy-template",
+  "version": "1.0.0",
   "scripts": {
     "commit": "czg",
     "bootstrap": "pnpm install",
@@ -59,9 +54,11 @@
     "print-js": "^1.6.0",
     "qrcode": "^1.5.0",
     "qs": "^6.10.3",
+    "ramda": "^0.28.0",
     "resize-observer-polyfill": "^1.5.1",
     "showdown": "^2.1.0",
     "sortablejs": "^1.15.0",
+    "tailwindcss": "^3.1.8",
     "tinymce": "^5.10.3",
     "vditor": "^3.8.13",
     "vue": "^3.2.33",
@@ -87,6 +84,7 @@
     "@types/nprogress": "^0.2.0",
     "@types/qrcode": "^1.4.2",
     "@types/qs": "^6.9.7",
+    "@types/ramda": "^0.28.15",
     "@types/showdown": "^1.9.4",
     "@types/sortablejs": "^1.10.7",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
@@ -141,7 +139,6 @@
     "vite-plugin-svg-icons": "^2.0.1",
     "vite-plugin-theme": "^0.8.6",
     "vite-plugin-vue-setup-extend": "^0.4.0",
-    "vite-plugin-windicss": "^1.8.4",
     "vue-eslint-parser": "^8.3.0",
     "vue-tsc": "^0.33.9"
   },
@@ -150,15 +147,7 @@
     "rollup": "^2.56.3",
     "gifsicle": "5.2.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/anncwb/vue-vben-admin.git"
-  },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/anncwb/vue-vben-admin/issues"
-  },
-  "homepage": "https://github.com/anncwb/vue-vben-admin",
   "engines": {
     "node": "^12 || >=14"
   },
