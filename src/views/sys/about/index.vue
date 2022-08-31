@@ -1,0 +1,104 @@
+<template>
+  <PageWrapper title="关于">
+    <template #headerContent>
+      <div class="flex justify-between flex-col">
+        <span class="flex-1">
+          <a :href="GITHUB_URL" target="_blank">{{ name }}</a>
+          是一个基于Vue3、Vite3、 Ant-Design-Vue 、TypeScript、TailwindCSS
+          的后台解决方案，目标是为中大型项目开发，提供现成的开箱解决方案。
+        </span>
+        <span class="flex-1">
+          该模板是以<a :href="GITHUB_URL" target="_blank">{{ name }}</a>
+          为基础二次开发而来，内置大量已封装好的组件，具体文档可以通过下面的链接查看。
+        </span>
+      </div>
+    </template>
+    <Description @register="infoRegister" class="enter-y" />
+    <Description @register="register" class="my-4 enter-y" />
+    <Description @register="registerDev" class="enter-y" />
+  </PageWrapper>
+</template>
+<script lang="ts" setup>
+  import { h, ref } from 'vue';
+  import { Tag } from 'ant-design-vue';
+  import { PageWrapper } from '/@/components/Page';
+  import { Description, DescItem, useDescription } from '/@/components/Description';
+  import { GITHUB_URL, SITE_URL, DOC_URL } from '/@/settings/siteSetting';
+
+  const { pkg, lastBuildTime } = __APP_INFO__;
+
+  const { dependencies, devDependencies, version } = pkg;
+
+  const schema: DescItem[] = [];
+  const devSchema: DescItem[] = [];
+
+  const name = ref('vben-admin');
+
+  const commonTagRender = (color: string) => (curVal) => h(Tag, { color }, () => curVal);
+  const commonLinkRender = (text: string) => (href) => h('a', { href, target: '_blank' }, text);
+
+  const infoSchema: DescItem[] = [
+    {
+      label: '版本',
+      field: 'version',
+      render: commonTagRender('blue'),
+    },
+    {
+      label: '最后编译时间',
+      field: 'lastBuildTime',
+      render: commonTagRender('blue'),
+    },
+    {
+      label: '文档地址',
+      field: 'doc',
+      render: commonLinkRender('文档地址'),
+    },
+    {
+      label: '预览地址',
+      field: 'preview',
+      render: commonLinkRender('预览地址'),
+    },
+    {
+      label: 'Github',
+      field: 'github',
+      render: commonLinkRender('Github'),
+    },
+  ];
+
+  const infoData = {
+    version,
+    lastBuildTime,
+    doc: DOC_URL,
+    preview: SITE_URL,
+    github: GITHUB_URL,
+  };
+
+  Object.keys(dependencies).forEach((key) => {
+    schema.push({ field: key, label: key });
+  });
+
+  Object.keys(devDependencies).forEach((key) => {
+    devSchema.push({ field: key, label: key });
+  });
+
+  const [register] = useDescription({
+    title: '生产环境依赖',
+    data: dependencies,
+    schema: schema,
+    column: 3,
+  });
+
+  const [registerDev] = useDescription({
+    title: '开发环境依赖',
+    data: devDependencies,
+    schema: devSchema,
+    column: 3,
+  });
+
+  const [infoRegister] = useDescription({
+    title: '项目信息',
+    data: infoData,
+    schema: infoSchema,
+    column: 2,
+  });
+</script>
